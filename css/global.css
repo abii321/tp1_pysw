@@ -1,0 +1,22 @@
+/*General*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #fdfcf8 ;
+}
+
+/*Barra de Navegacion*/
+nav{
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ede9de;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    background-color: #ede9de;
+}
