@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/contact.css">
+    <title>Contact</title>
+</head>
+<body>
+    <header>
+        <!--<h1>Sitio de Turismo</h1>-->
+        <nav>
+            <a href="main.html">Destinos</a>
+            <a href="agencias.html">Agencias</a>
+            <a href="precios.html">Precios</a>
+            <a href="blog.html">Blog</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <div class="container">
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name</label>
+            <!--el pattern permite mayus y minus con espacios-->
+            <input type="text" 
+            id="name" 
+            name="name" 
+            pattern="^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+$"
+            title="Only letters and spaces are allowed"
+            placeholder="Only letters"
+            class="in"
+            required>
+
+            <label for="lastname">Lastname</label>
+            <input type="text" 
+            id="lastname" 
+            name="lastname" 
+            pattern="^[A-Za-záéíóúÁÉÍÓÚñÑüÜ\s]+$"
+            title="Only letters and spaces are allowed"
+            placeholder="Only letters"
+            class="in"
+            required>
+
+            <label>
+                <input name="tos" type="checkbox" required/>
+                - I am 18 years old or older.
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Information</legend>
+            <label for="email">Email</label>
+            <input type="email" 
+            id="email" 
+            name="email"
+            class="in" 
+            required>
+
+            <label for="nro">Phone Number</label>
+            <!--el pattern es flexible para numeros, guiones, parentesis y +-->
+            <input type="tel" 
+            id="nro" 
+            name="nro" 
+            pattern="^[\d\s\-\+\(\)]+$"
+            title="can use numbers, underscore, and +"
+            class="in"
+            required>
+        </fieldset>
+         <fieldset>
+        <legend>Message</legend>
+            <label for="form-message">Message</label><br />
+            <textarea name="message" id="form-message" required></textarea>
+
+            <legend>Purpose</legend>
+            <input type="radio" id="purposeChoise1" name="purpose" value="job application">
+            <label for="purposeChoise1" class="lbl-line">Job application</label>
+            <input type="radio" id="purposeChoise2" name="purpose" value="custumer review">
+            <label for="purposeChoise2" class="lbl-line"></label>Customer review</label>
+        </fieldset>
+        <fieldset>
+            <legend>Consent Agreement</legend>
+            <label>
+            <input name="consent" type="checkbox" required/>
+            - I agree to the <a href="">terms and conditions</a>.
+        </label>
+        </fieldset>
+
+        <button type="button" commandfor="mydialog" command="show-modal" class="btn">Sumit</button>
+        <dialog id="mydialog">
+                Are you sure you want to send this form?
+                <button type="submit" class="btn">Send</button>
+                <button type="button" commandfor="mydialog" command="close" class="btn">Cancel</button>
+                <div class="loader"></div>
+        </dialog> 
+        
+    </form>      
+    </div> 
+</body>
+</html>
