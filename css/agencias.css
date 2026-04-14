@@ -55,8 +55,14 @@
     font-size: 22px;
     margin-top: 10px;
     transition: transform 0.3s;
+    color: #ccc;
+}
+
+.card:hover .rating{
+    color: gold;
 }
 
 .card:hover .rating{
     transform: scale(1.3);
 }
+
