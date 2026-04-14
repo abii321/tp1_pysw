@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - World Travel</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/destinos.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="agencias.html">Agencias</a>
+            <a href="precios.html">Precios</a>
+            <a href="">Blog</a>
+            <a href="">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-destinos">
+        <h2 class="titulo">Explora nuestros Destinos</h2>
+
+        <input type="radio" id="todos" name="filtro" checked>
+        <input type="radio" id="cultural" name="filtro">
+        <input type="radio" id="naturaleza" name="filtro">
+        <input type="radio" id="playa" name="filtro">
+
+        <div class="filtros-labels">
+            <label for="todos">Todos</label>
+            <label for="cultural">Cultural</label>
+            <label for="naturaleza">Naturaleza</label>
+            <label for="playa">Sol y Playa</label>
+        </div>
+
+        <div class="galeria-masonry">
+            
+            <div class="card-destino cultural card-tall">
+                <img src="../img/destinos/japon.jpg" alt="Japón">
+                <div class="overlay">
+                    <h3>Japón</h3>
+                    <p>Templos antiguos y contraste tecnológico.</p>
+                </div>
+            </div>
+
+            <div class="card-destino naturaleza">
+                <img src="../img/destinos/suiza.jpg" alt="Suiza">
+                <div class="overlay">
+                    <h3>Suiza</h3>
+                    <p>Lagos de cristal y picos nevados.</p>
+                </div>
+            </div>
+
+            <div class="card-destino playa card-tall">
+                <img src="../img/destinos/egipto.jpg" alt="Egipto">
+                <div class="overlay">
+                    <h3>Egipto (Mar Rojo)</h3>
+                    <p>Buceo y playas inolvidables.</p>
+                </div>
+            </div>
+
+            <div class="card-destino cultural">
+                <img src="../img/destinos/italia.jpg" alt="Italia">
+                <div class="overlay">
+                    <h3>Italia</h3>
+                    <p>Un museo al aire libre.</p>
+                </div>
+            </div>
+
+            <div class="card-destino naturaleza card-tall">
+                <img src="../img/destinos/argentina.jpg" alt="Argentina">
+                <div class="overlay">
+                    <h3>Argentina</h3>
+                    <p>La fuerza de las Cataratas y glaciares.</p>
+                </div>
+            </div>
+
+            <div class="card-destino playa">
+                <img src="../img/destinos/grecia.jpg" alt="Grecia">
+                <div class="overlay">
+                    <h3>Grecia</h3>
+                    <p>Navega por las islas del Egeo.</p>
+                </div>
+            </div>
+
+            <div class="card-destino playa card-tall">
+                <img src="../img/destinos/brazil.jpg" alt="Brasil">
+                <div class="overlay">
+                    <h3>Brasil</h3>
+                    <p>Playas espectaculares y biodiversidad única.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="titulo">Precios y Paquetes</h2>
+        <div class="tabla-responsiva">
+            <table class="tabla-destinos">
+                <thead>
+                    <tr>
+                        <th>Destino</th>
+                        <th>Categoría</th>
+                        <th>Precio Base</th>
+                        <th>Disponibilidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Destino">Japón</td>
+                        <td data-label="Categoría">Cultural</td>
+                        <td data-label="Precio Base">$3200</td>
+                        <td data-label="Disponibilidad">Alta</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Destino">Suiza</td>
+                        <td data-label="Categoría">Naturaleza</td>
+                        <td data-label="Precio Base">$2800</td>
+                        <td data-label="Disponibilidad">Media</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Destino">Grecia</td>
+                        <td data-label="Categoría">Sol y Playa</td>
+                        <td data-label="Precio Base">$2100</td>
+                        <td data-label="Disponibilidad">Alta</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+</body>
+</html>
