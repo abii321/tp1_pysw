@@ -1,11 +1,19 @@
 .container{
     background-color: lightsalmon;
-    border: 3px solid black;
     border-radius: 10px;
+    height: 80vh;
+    width: 98vw;
+    padding: 10px;
+    overflow: scroll;
     display: grid;
-    grid-template-columns:minmax(25px,1fr) minmax(100px, 32fr) minmax(25px,1fr);
+    grid-template-columns:minmax(100px, 5fr) minmax(100px,1fr);
+    grid-template-rows: 5% 95%;
+    gap: 10px 0%;
 }
-.container section{
+.container section section{
+    display: none;
+}
+section:target section{
     background-color: rgba(233, 145, 111, 0.747);
     border-radius: 10px;
     display: grid;
@@ -13,7 +21,27 @@
     grid-template-rows: auto-fill;
     gap: 10px 15px;
     padding: 10px;
-    grid-column-start: 2;
+    grid-row-start: 2;
+}
+section section:target{
+    background-color: rgba(233, 145, 111, 0.747);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    grid-template-rows: auto-fill;
+    gap: 10px 15px;
+    padding: 10px;
+    grid-row-start: 2;
+}
+ul a{
+    text-decoration: none;
+    background-color: rgb(221, 97, 48);
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: white;
+}
+div section{
+    grid-row-start: 2;
 }
 .container article:first-child{
     grid-column-start: span 2;
@@ -53,4 +81,34 @@ article{
 
     
     animation-fill-mode: both;
+}
+
+aside{
+    grid-row-start: 2;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill,minmax(100px,1fr));
+    position: relative;
+}
+/*Avatar*/
+.chip {
+  display: block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: rgba(248, 195, 174, 0.849);
+  position: absolute;
+  left: 15%;
+  top: 3%;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }

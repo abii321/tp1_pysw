@@ -19,6 +19,7 @@
             <a href="contacto.html">Contacto</a>
         </nav>
     </header>
+    <div class="container">
     <form action="#" method="post">
         <fieldset>
             <legend>Personal Information</legend>
@@ -86,14 +87,15 @@
         </label>
         </fieldset>
 
-        <button type="button" commandfor="mydialog" command="show-modal" class="btn">Confirmar</button>
+        <button type="button" commandfor="mydialog" command="show-modal" class="btn">Sumit</button>
         <dialog id="mydialog">
-                <button type="submit" class="btn">Enviar</button>
-                <button type="button" commandfor="mydialog" command="close" class="btn">Cancelar</button>
+                Are you sure you want to send this form?
+                <button type="submit" class="btn">Send</button>
+                <button type="button" commandfor="mydialog" command="close" class="btn">Cancel</button>
                 <div class="loader"></div>
         </dialog> 
         
     </form>      
-         
+    </div> 
 </body>
 </html>
