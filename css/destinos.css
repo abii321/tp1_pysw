@@ -1,0 +1,188 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-destinos {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* --- SISTEMA DE FILTRADO CSS-ONLY --- */
+/* Ocultamos los inputs reales */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilizamos las etiquetas que actuarán como botones */
+.filtros-labels {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filtros-labels label {
+    padding: 0.5rem 1.5rem;
+    background-color: #eee;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+.filtros-labels label:hover {
+    background-color: #ddd;
+}
+
+/* Colores de los botones cuando su radio correspondiente está :checked */
+#todos:checked ~ .filtros-labels label[for="todos"],
+#cultural:checked ~ .filtros-labels label[for="cultural"],
+#naturaleza:checked ~ .filtros-labels label[for="naturaleza"],
+#playa:checked ~ .filtros-labels label[for="playa"] {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Lógica de filtrado con combinador de hermanos (~) */
+#cultural:checked ~ .galeria-masonry .card-destino:not(.cultural),
+#naturaleza:checked ~ .galeria-masonry .card-destino:not(.naturaleza),
+#playa:checked ~ .galeria-masonry .card-destino:not(.playa) {
+    display: none; /* Oculta las tarjetas que no coinciden con el filtro */
+}
+
+/* --- GALERÍA MASONRY CON CSS GRID --- */
+.galeria-masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 200px; /* Altura base para jugar con los spans */
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+/* Variamos la altura de algunas tarjetas para lograr el efecto Masonry */
+.card-tall {
+    grid-row: span 2;
+}
+
+/* --- TARJETAS CON ZOOM Y OVERLAY --- */
+.card-destino {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-destino img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-destino:hover img {
+    transform: scale(1.15); /* Efecto Zoom */
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 2rem 1rem 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.card-destino:hover .overlay {
+    opacity: 1; /* Aparece el Overlay */
+    transform: translateY(0);
+}
+
+.overlay h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- TABLA RESPONSIVA --- */
+.tabla-responsiva {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal en móviles si es necesario */
+}
+
+.tabla-destinos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-destinos th, 
+.tabla-destinos td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-destinos th {
+    background-color: #333;
+    color: white;
+}
+
+.tabla-destinos tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Media Query para hacer la tabla apilable en dispositivos móviles pequeños */
+@media (max-width: 600px) {
+    .tabla-destinos thead {
+        display: none; /* Ocultamos el encabezado en móvil */
+    }
+    
+    .tabla-destinos tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+    }
+    
+    .tabla-destinos td {
+        display: block;
+        text-align: right;
+        border-bottom: none;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    .tabla-destinos td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    .tabla-destinos td:last-child {
+        border-bottom: 1px solid #ddd;
+    }
+}
