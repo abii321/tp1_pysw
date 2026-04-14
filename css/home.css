@@ -68,3 +68,134 @@ h2{
     background-color: #ede9de;
     transform: translateY(-10px);
 }
+
+
+/*Visitas*/
+#opiniones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#opiniones h2{
+    display: block;
+}
+.contador-container{
+    padding: 20px 100px 20px 100px;
+    background-color:  #ede9de;
+    border-radius: 8px;
+}
+.contador::after{
+    content: "0";
+    animation: contar 3s forwards;
+}
+@keyframes contar {
+    0%   { content: "0+";  }
+    20%  { content: "100+" }
+    40%  { content: "200+" }
+    60%  { content: "300+" }
+    80%  { content: "400+" }
+    100% { content: "500+" }
+}
+
+
+/*Opiniones*/
+.carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+    scroll-behavior: smooth;  
+    gap: 20px;
+    padding: 20px 0;
+    max-width: 800px;        
+    margin: 0 auto;    
+}
+
+
+.carrusel-item {
+    flex: 0 0 100%;           
+    scroll-snap-align: center; 
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.carrusel-item p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.carrusel-item cite {
+    font-weight: bold;
+    color: #83827d;
+}
+
+/*Pie de pagina*/
+footer{
+    background-color: #ede9de;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    gap: 40px;
+    padding: 40px;
+    align-items: start;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+} 
+.redes .icon img{
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+}
+footer h3{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.mapa-contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.form-subscripcion{
+    border: 2px solid #83827d;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 8px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px
+}
+.form-subscripcion input{
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form-subscripcion label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.form-subscripcion button {
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
+}
+.form-subscripcion button:hover{
+    background-color: #83827d;
+    color: white;
+}
+
+footer p{
+    text-align: center;
+}
