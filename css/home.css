@@ -134,7 +134,6 @@ h2{
 
 /*Pie de pagina*/
 footer{
-    background-color: #ede9de;
     display: grid;
     grid-template-columns: 40% 50%;
     gap: 40px;
@@ -196,6 +195,3 @@ footer h3{
     color: white;
 }
 
-footer p{
-    text-align: center;
-}

@@ -25,3 +25,12 @@ h2 {
     color:  #83827d;
     display: block;
 }
+
+/*Pie de pagina*/
+footer p{
+    text-align: center;
+}
+footer{
+    padding: 30px;
+    background-color: #ede9de;
+}
